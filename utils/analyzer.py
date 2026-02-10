@@ -5,7 +5,7 @@ import config
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 
-def call_mixtral(prompt: str):
+def call_llm(prompt: str):
     headers = {
         "Authorization": f"Bearer {config.GROQ_API_KEY}",
         "Content-Type": "application/json"

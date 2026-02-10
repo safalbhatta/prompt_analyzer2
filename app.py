@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import markdown
-from utils.analyzer import call_mixtral, extract_score
+from utils.analyzer import call_llm, extract_score
 import config
 
 app = Flask(__name__)
@@ -27,7 +27,7 @@ PROMPT:
 """
 
         try:
-            response = call_mixtral(prompt)
+            response = call_llm(prompt)
             result = markdown.markdown(response)
             score = extract_score(response)
 
